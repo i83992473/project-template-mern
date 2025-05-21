@@ -1,118 +1,82 @@
-# MERN Stack Application
+# MERN Project Template
 
-This is a full-stack MERN (MongoDB, Express.js, React, Node.js) application with Material UI integration.
+A modern full-stack application template using the MERN stack (MongoDB, Express.js, React, Node.js).
+
+## Features
+
+- React frontend with Vite
+- Express.js backend
+- MongoDB integration
+- Modern development setup
+- Concurrent development servers
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v14 or higher)
+- npm (v6 or higher)
+- MongoDB (local or Atlas)
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/i83992473/project-template-mern.git
+cd project-template-mern
+```
+
+2. Install all dependencies (client, server, and root):
+```bash
+npm run install-all
+```
+
+3. Set up environment variables:
+   - Copy `server/.env.example` to `server/.env`
+   - Update the environment variables as needed
+
+### Development
+
+To start both the frontend and backend development servers with a single command:
+```bash
+npm start
+```
+
+This will start:
+- Frontend development server (default: http://localhost:5173)
+- Backend development server (default: http://localhost:5000)
+
+### Available Scripts
+
+- `npm start` - Start both frontend and backend development servers
+- `npm run client` - Start only the frontend development server
+- `npm run server` - Start only the backend development server
+- `npm run build` - Build the frontend for production
+- `npm run install-all` - Install dependencies for root, client, and server
 
 ## Project Structure
+
 ```
 mern-app/
-├── client/          # React frontend (Vite)
-└── server/          # Node.js backend
+├── client/             # React frontend
+│   ├── public/         # Static files
+│   └── src/           # Source files
+├── server/            # Express backend
+│   ├── config/        # Configuration files
+│   ├── controllers/   # Route controllers
+│   ├── models/        # Database models
+│   └── routes/        # API routes
+└── package.json       # Root package.json for concurrent running
 ```
 
-## Prerequisites
-- Node.js (v14 or higher)
-- npm (Node Package Manager)
-- MongoDB Atlas account
+## Contributing
 
-## Setup Instructions
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-### 1. Project Initialization
-```bash
-# Create project directory
-mkdir mern-app
-cd mern-app
-```
+## License
 
-### 2. Frontend Setup (React + Vite)
-```bash
-# Create React frontend using Vite
-npm create vite@latest client -- --template react
-cd client
-
-# Install frontend dependencies
-npm install
-npm install @mui/material @emotion/react @emotion/styled @mui/icons-material
-npm install react-router-dom axios
-```
-
-### 3. Backend Setup
-```bash
-# Create and setup backend
-cd ..
-mkdir server
-cd server
-npm init -y
-
-# Install backend dependencies
-npm install express mongoose dotenv cors
-npm install nodemon --save-dev
-```
-
-### 4. Configuration Files
-
-#### Backend Configuration
-Create a `server/.env` file with the following content:
-```
-MONGODB_URI=mongodb+srv://<username>:<password>@<cluster-url>/<database-name>?retryWrites=true&w=majority
-PORT=5000
-```
-
-Update `server/package.json` to include these scripts:
-```json
-{
-  "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon server.js"
-  }
-}
-```
-
-### 5. Running the Application
-
-#### Frontend
-```bash
-cd client
-npm run dev
-```
-The frontend will be available at `http://localhost:5173`
-
-#### Backend
-```bash
-cd server
-npm run dev
-```
-The backend will be available at `http://localhost:5000`
-
-## Development Notes
-
-### Frontend Features
-- React with Vite for fast development
-- Material UI for modern, responsive design
-- React Router for navigation
-- Axios for API calls
-
-### Backend Features
-- Express.js server
-- MongoDB Atlas cloud database
-- CORS enabled
-- Environment variables for configuration
-
-## Troubleshooting
-
-If you encounter npm installation issues:
-1. Try running the terminal as administrator
-2. Clear npm cache: `npm cache clean --force`
-3. Delete node_modules folder and package-lock.json, then run `npm install` again
-4. Alternatively, use yarn instead of npm
-
-## Security Notes
-- The `.env` file should be added to `.gitignore`
-- Never commit sensitive credentials to version control
-- Consider using environment variables for all sensitive data
-
-## Next Steps
-1. Set up basic Express server
-2. Create MongoDB models
-3. Implement API routes
-4. Set up React components with Material UI
-5. Implement frontend-backend communication 
+This project is licensed under the ISC License. 
